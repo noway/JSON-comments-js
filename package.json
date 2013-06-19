@@ -1,0 +1,32 @@
+{
+	"name": "json-comments",
+	"version": "0.0.1",
+	"author": "noway421 <noway@2ch.hk>",
+	"description": "Realization of comments in JSON",
+
+	"bugs": {
+		"url": "https://github.com/noway421/JSON-comments-js/issues",
+		"email": "noway@2ch.hk"
+	},
+
+	"license": "gpl-v3.0",
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/noway421/JSON-comments-js"
+	},
+
+	"dependencies": {
+	},
+
+	"bundledDependencies": [
+	],
+
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-uglify": "~0.2.2",
+		"grunt-contrib-jshint": "~0.6.0",
+		"grunt-simple-mocha": "~0.4.0"
+	}
+
+}
