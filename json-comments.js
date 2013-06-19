@@ -293,12 +293,12 @@ if (typeof JSONcomments !== "object") {
 		return commentSection;
 	};
 
-	var array = function (value) {
+	var array = function (value, mind) {
 		var i;            // The loop counter.
 		var v;            // The member value.
 		var comma;        // Need to put comma?
 		var length;
-		var mind = gap;
+		//var mind = gap;
 
 		var partial = [];
 
@@ -368,7 +368,7 @@ if (typeof JSONcomments !== "object") {
 		// Is the value an array?
 
 		if (toStr(value) === "[object Array]") {
-			return array(value);
+			return array(value, mind);
 		}
 
 		// If the replacer is an array, use it to select the members
@@ -404,7 +404,7 @@ if (typeof JSONcomments !== "object") {
 			}
 			var addedString = "";
 
-			addedString = objectComment(value, "").join("\n" + gap);
+			addedString = objectComment(value, "").join(""/*"\n" + gap*/);
 			if (addedString) {
 				partial.push(addedString);
 			}
@@ -420,7 +420,7 @@ if (typeof JSONcomments !== "object") {
 					partial.push(addedString + comma);
 				}
 
-				addedString = objectComment(value, k).join("\n" + gap);
+				addedString = objectComment(value, k).join(""/*"\n" + gap*/);
 
 				if (addedString) {
 					partial.push(addedString);
@@ -431,7 +431,6 @@ if (typeof JSONcomments !== "object") {
 
 		// Join all of the member texts together, separated with commas,
 		// and wrap them in braces.
-
 		v = (partial.length === 0) ? "{}" :
 
 			(gap ?
@@ -443,6 +442,7 @@ if (typeof JSONcomments !== "object") {
 				("{" + partial.join("") + "}"));
 
 		gap = mind;
+
 		return v;
 	};
 

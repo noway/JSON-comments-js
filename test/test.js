@@ -176,5 +176,16 @@ describe("json-comments", function () {
 				"{\"k\":\"v\"\n//test\n//test\n//test\n}"
 			);
 		});
+		it("no broken indent in object with array", function () {
+			assert.deepEqual(
+				JSONcomments.stringify({
+					"//": "test\ntest\ntest",
+					"k": "v",
+					"k2": [1,2,3]
+				}, null, "\t"),
+				"{\n\t\n\t//test\n\t//test\n\t//test\n\n\t\"k\": \"v\","+
+				"\n\t\"k2\": [\n\t\t1,\n\t\t2,\n\t\t3\n\t]\n}"
+			);
+		});
 	});
 });
