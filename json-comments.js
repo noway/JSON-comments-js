@@ -404,7 +404,7 @@ if (typeof JSONcomments !== "object") {
 			}
 			var addedString = "";
 
-			addedString = objectComment(value, "").join(""/*"\n" + gap*/);
+			addedString = objectComment(value, "").join("\n" + gap);
 			if (addedString) {
 				partial.push(addedString);
 			}
@@ -420,7 +420,7 @@ if (typeof JSONcomments !== "object") {
 					partial.push(addedString + comma);
 				}
 
-				addedString = objectComment(value, k).join(""/*"\n" + gap*/);
+				addedString = objectComment(value, k).join("\n" + gap);
 
 				if (addedString) {
 					partial.push(addedString);
